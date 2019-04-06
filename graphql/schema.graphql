@@ -1,3 +1,9 @@
-type Query {
+type Nicolas {
   name: String!
+  age: Int!
+  gender: String!
+}
+type Query {
+  person: Nicolas!
+  #   위에 type을 정한 nicols가 return타입
 }
