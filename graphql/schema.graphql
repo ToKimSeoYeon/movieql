@@ -1,15 +1,14 @@
-type Person {
+type Movie {
   id: Int!
   name: String!
-  age: Int!
-  gender: String!
+  score: Int!
 }
+
 type Query {
-  people: [Person]!
-  # array를 return해야 한다는 뜻
-  person(id: Int!): Person!
-  # person의 매개별수인 id를 Int를 반환하고 person함수의 실행결과로 Person을 반환함
-  # ID가 필요해 오직 한 person에 ID로 접근하기 위해서
-  # ID는 뭐라고 명명해도 상관없어. 성격이나 ID potato도 됨.
-  #   그리고 여기 ID는 array를 만들때 자동으로 생기는 번호다
+  movies: [Movie]!
+  movie(id: Int!): Movie
+}
+
+type Mutation {
+  addMovie(name: String!, score: Int!): Movie!
 }
